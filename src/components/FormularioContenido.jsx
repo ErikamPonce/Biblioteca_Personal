@@ -2,7 +2,7 @@ function FormularioContenido() {
   return (
     <section className="formulario">
 
-      <h2>➕ Agregar contenido</h2>
+      <h2>+ Agregar contenido</h2>
 
       <form>
 
@@ -19,10 +19,10 @@ function FormularioContenido() {
           <label>Tipo</label>
 
           <select>
-            <option value="pelicula">🎬 Película</option>
-            <option value="serie">📺 Serie</option>
-            <option value="libro">📖 Libro</option>
-            <option value="videojuego">🎮 Videojuego</option>
+            <option value="pelicula">Película</option>
+            <option value="serie">Serie</option>
+            <option value="libro">Libro</option>
+            <option value="videojuego">Videojuego</option>
           </select>
         </div>
 
@@ -39,11 +39,11 @@ function FormularioContenido() {
           <label>Calificación</label>
 
           <select>
-            <option value="1">⭐ 1</option>
-            <option value="2">⭐⭐ 2</option>
-            <option value="3">⭐⭐⭐ 3</option>
-            <option value="4">⭐⭐⭐⭐ 4</option>
-            <option value="5">⭐⭐⭐⭐⭐ 5</option>
+            <option value="1">⭐</option>
+            <option value="2">⭐⭐</option>
+            <option value="3">⭐⭐⭐</option>
+            <option value="4">⭐⭐⭐⭐</option>
+            <option value="5">⭐⭐⭐⭐⭐</option>
           </select>
         </div>
 

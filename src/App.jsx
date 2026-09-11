@@ -6,7 +6,7 @@ function App() {
     <div className="app">
 
       <header className="header">
-        <h1>📚 Mi Biblioteca de Entretenimiento</h1>
+        <h1>Mi Biblioteca de Entretenimiento</h1>
 
         <p>
           Organiza tus películas, series, libros y videojuegos
