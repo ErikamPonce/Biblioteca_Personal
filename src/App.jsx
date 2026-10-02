@@ -1,30 +1,36 @@
+import { useState } from "react";
 import "./App.css";
+
+import Header from "./components/Header/Header";
+import Biblioteca from "./components/Biblioteca/Biblioteca";
 import FormularioContenido from "./components/FormularioContenido";
 
 function App() {
+
+  const [mostrarFormulario, setMostrarFormulario] = useState(false);
+
+  //Aqui van los ejemplos de contenido que se van a mostrar en la biblioteca
+
   return (
     <div className="app">
 
-      <header className="header">
-        <h1>Mi Biblioteca de Entretenimiento</h1>
+      {/* Header siempre visible */}
+      <Header />
 
-        <p>
-          Organiza tus películas, series, libros y videojuegos
-        </p>
-      </header>
+      <main>
 
-      <main className="container">
+        {mostrarFormulario ? (
 
-        <section className="welcome">
-          <h2>Bienvenido a tu biblioteca</h2>
+          <FormularioContenido />
 
-          <p>
-            Aquí podrás organizar todo el contenido que quieres
-            ver, leer o jugar.
-          </p>
-        </section>
+        ) : (
 
-        <FormularioContenido />
+          <Biblioteca
+            contenidos={[]} //Se agrega contenidos entre corchetes
+            onAgregar={() => setMostrarFormulario(true)}
+          />
+
+        )}
 
       </main>
 

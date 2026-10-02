@@ -1,0 +1,350 @@
+.biblioteca {
+    min-height: calc(100vh - 70px);
+
+    background-color: #0d0f13;
+
+    color: white;
+
+    padding: 40px 24px 60px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* 
+   ENCABEZADO
+ */
+
+.heading {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 32px;
+}
+
+.eyebrow {
+    color: #818cf8;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.heading h1 {
+    margin: 5px 0 5px;
+
+    color: #ffffff;
+
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.1;
+}
+
+.heading p {
+    margin: 0;
+
+    color: #737a88;
+
+    font-size: 14px;
+}
+
+/* 
+   BOTÓN AGREGAR
+ */
+
+.addButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 12px 18px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #6366f1;
+
+    color: white;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+    white-space: nowrap;
+}
+
+.addButton span {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.addButton:hover {
+    background: #4f46e5;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(99, 102, 241, 0.25);
+}
+
+/* 
+   FILTROS
+ */
+
+.filters {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 35px;
+
+    overflow-x: auto;
+
+    padding-bottom: 4px;
+}
+
+.filterButton {
+    flex-shrink: 0;
+
+    padding: 9px 17px;
+
+    border: 1px solid #292e38;
+
+    border-radius: 999px;
+
+    background-color: #171a20;
+
+    color: #858b99;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.filterButton:hover {
+    color: #ffffff;
+
+    border-color: #454b5a;
+
+    background-color: #20242c;
+}
+
+.filterActive {
+    background-color: #ffffff;
+
+    border-color: #ffffff;
+
+    color: #111318;
+}
+
+.filterActive:hover {
+    background-color: #e5e7eb;
+
+    color: #111318;
+}
+
+/* 
+   COLECCIÓN
+ */
+
+.collectionHeader {
+    display: flex;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.collectionHeader h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 21px;
+}
+
+.collectionHeader p {
+    margin: 5px 0 0;
+
+    color: #686f7d;
+
+    font-size: 12px;
+}
+
+/* 
+   GRID
+ */
+
+.grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+/* 
+   EMPTY STATE
+ */
+
+.emptyState {
+    min-height: 450px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 50px 20px;
+
+    border: 1px dashed #303540;
+
+    border-radius: 18px;
+
+    background-color: #13161b;
+}
+
+.emptyIcon {
+    width: 80px;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 22px;
+
+    background-color: #20242d;
+
+    font-size: 38px;
+}
+
+.emptyState h2 {
+    margin: 0 0 8px;
+
+    color: #ffffff;
+
+    font-size: 22px;
+}
+
+.emptyState p {
+    max-width: 450px;
+
+    margin: 0 0 25px;
+
+    color: #737a88;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+.emptyButton {
+    padding: 12px 22px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #6366f1;
+
+    color: white;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.emptyButton:hover {
+    background-color: #4f46e5;
+
+    transform: translateY(-2px);
+}
+
+/* 
+   RESPONSIVE
+ */
+
+/* 4 columnas */
+
+@media (max-width: 1200px) {
+
+    .grid {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+    }
+
+}
+
+/* 3 columnas */
+
+@media (max-width: 950px) {
+
+    .grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+/* 2 columnas */
+
+@media (max-width: 650px) {
+
+    .biblioteca {
+        padding: 25px 16px 40px;
+    }
+
+    .heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .addButton {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+}
+
+/* 1 columna */
+
+@media (max-width: 430px) {
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+}
