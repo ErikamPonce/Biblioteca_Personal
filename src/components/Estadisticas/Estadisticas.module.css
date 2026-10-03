@@ -1,0 +1,156 @@
+/* ===========================
+   SECCIÓN DE ESTADÍSTICAS
+   =========================== */
+
+.estadisticas {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+/* Cada fila de tarjetas */
+.fila {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* Ajuste para la segunda fila (3 tarjetas en lugar de 4) */
+.fila:last-child {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Tarjeta individual */
+.card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: linear-gradient(145deg, #16181d 0%, #1a1d24 100%);
+  border: 1px solid #2a2d35;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+
+/* Línea de color a la izquierda usando --accent-color */
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+/* Efecto hover */
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-color);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.card:hover::before {
+  width: 6px;
+}
+
+/* Ícono */
+.icono {
+  font-size: 2rem;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* Info (número + etiqueta) */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.valor {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.label {
+  font-size: 0.85rem;
+  color: #8b8f99;
+  font-weight: 500;
+}
+
+/* ===========================
+   SUBTÍTULO DE SECCIÓN
+   =========================== */
+
+.subtitulo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #e5e7eb;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 16px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Línea decorativa debajo del título */
+.subtitulo::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, #2a2d35 0%, transparent 100%);
+  margin-left: 12px;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .fila {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fila:last-child {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Móviles */
+@media (max-width: 640px) {
+  .fila,
+  .fila:last-child {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .icono {
+    font-size: 1.6rem;
+    width: 48px;
+    height: 48px;
+  }
+
+  .valor {
+    font-size: 1.5rem;
+  }
+}

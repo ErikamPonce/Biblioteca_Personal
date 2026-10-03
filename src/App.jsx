@@ -1,39 +1,40 @@
 import { useState } from "react";
 import "./App.css";
-
 import Header from "./components/Header/Header";
 import Biblioteca from "./components/Biblioteca/Biblioteca";
-import FormularioContenido from "./components/FormularioContenido";
+import FormularioContenido from "./components/Formulario/FormularioContenido";
 
 function App() {
-
+  // Estado para controlar si se ve el formulario o la biblioteca
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
+  
+  // Estado para guardar los contenidos
+  const [contenidos, setContenidos] = useState([]);
 
-  //Aqui van los ejemplos de contenido que se van a mostrar en la biblioteca
+  // Función que se ejecuta cuando el formulario envía datos
+  const handleAgregarContenido = (nuevoContenido) => {
+    const contenidoConId = { ...nuevoContenido, id: Date.now() };
+    setContenidos([...contenidos, contenidoConId]);
+    setMostrarFormulario(false); // Cierra el formulario
+  };
 
   return (
     <div className="app">
-
-      {/* Header siempre visible */}
       <Header />
 
       <main>
-
         {mostrarFormulario ? (
-
-          <FormularioContenido />
-
-        ) : (
-
-          <Biblioteca
-            contenidos={[]} //Se agrega contenidos entre corchetes
-            onAgregar={() => setMostrarFormulario(true)}
+          <FormularioContenido 
+            onAgregar={handleAgregarContenido}
+            onCerrar={() => setMostrarFormulario(false)}
           />
-
+        ) : (
+          <Biblioteca
+            contenidos={contenidos}
+            onAgregar={() => setMostrarFormulario(true)} // <-- Nombre unificado
+          />
         )}
-
       </main>
-
     </div>
   );
 }
